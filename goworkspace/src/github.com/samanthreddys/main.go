@@ -11,4 +11,5 @@ func main() {
 	hello.Hello()
 	fmt.Println(practice.MyName)
 	//fmt.Println(practice.myCountry)
+	practice.MyVariables()
 }
