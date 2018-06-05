@@ -12,4 +12,16 @@ func main() {
 	fmt.Println(practice.MyName)
 	//fmt.Println(practice.myCountry)
 	practice.MyVariables()
+	fmt.Println(practice.MyTotal())
+	practice.Increment()
+
+	x := 0
+	increment := func() int {
+		x++
+		return x
+
+	}
+	fmt.Println(increment())
+	fmt.Println(increment())
+
 }
