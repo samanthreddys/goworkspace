@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// constants are parallel type system in GO
 const p int = 100
 
 const (
