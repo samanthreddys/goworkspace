@@ -5,7 +5,8 @@ import (
 )
 
 func main() {
-	n := average(10, 2, 3, 4, 5)
+	data := []float64{10, 203, 30, 40, 50, 70, 90}
+	n := average(data...)
 
 	fmt.Println(n)
 }
