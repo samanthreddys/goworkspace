@@ -7,10 +7,7 @@ func filter(numbers []int, callback func(int) bool) []int{
 		//fmt.Println("n value is:",n)
 		//x :=n%2==0
 		if callback(n) {
-			if n%2  == 0{
-				xs = append(xs,n)
-
-			}
+			xs = append(xs,n)
 			
 		}
 	}
@@ -19,7 +16,8 @@ func filter(numbers []int, callback func(int) bool) []int{
 
 func main(){
 	xs:= filter([]int{1,2,3,4,5,6,16,17,7,8,8,14,9,10}, func(n int) bool{
-		return n>0
+		//fmt.Println("n value is:",n)
+		return n %2 !=0
 	})
 	fmt.Println(xs)
 }
