@@ -10,7 +10,7 @@ import (
 func main() {
 	hello.Hello()
 	fmt.Println(practice.MyName)
-	//fmt.Println(practice.myCountry)
+	fmt.Println(practice.myCountry)
 	practice.MyVariables()
 	fmt.Println(practice.MyTotal())
 	practice.Increment()
