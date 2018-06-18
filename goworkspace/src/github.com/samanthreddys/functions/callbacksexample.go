@@ -4,8 +4,7 @@ import "fmt"
 func filter(numbers []int, callback func(int) bool) []int{
 	xs:=[]int{}
 	for _, n:= range numbers{
-		//fmt.Println("n value is:",n)
-		//x :=n%2==0
+
 		if callback(n) {
 			xs = append(xs,n)
 			
