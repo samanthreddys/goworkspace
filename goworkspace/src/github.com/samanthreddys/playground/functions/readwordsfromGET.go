@@ -20,12 +20,9 @@ func main() {
 	sc.Split(bufio.ScanWords)
 	for sc.Scan() {
 		words[sc.Text()] = ""
-		//wordlist = append(wordlist, _)
 
 	}
-
 	//fmt.Println(words)
-
 	if err := sc.Err(); err != nil {
 		fmt.Fprintln(os.Stderr, "reading")
 
