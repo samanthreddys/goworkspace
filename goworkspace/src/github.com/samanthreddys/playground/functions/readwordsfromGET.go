@@ -22,6 +22,7 @@ func main() {
 		words[sc.Text()] = ""
 
 	}
+	defer res.Body.Close()
 	//fmt.Println(words)
 	if err := sc.Err(); err != nil {
 		fmt.Fprintln(os.Stderr, "reading")
