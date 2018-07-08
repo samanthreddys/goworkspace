@@ -29,6 +29,7 @@ func (c Circle) area() float64 {
 }
 
 func info(z Shape) {
+
 	fmt.Println(z)
 	fmt.Println(z.area())
 }

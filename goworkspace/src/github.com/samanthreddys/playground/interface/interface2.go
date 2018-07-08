@@ -14,7 +14,7 @@ func main() {
 	fmt.Println(studyGroup)
 	fmt.Println("sort.StringSlice(studyGroup): ", sort.StringSlice(studyGroup))
 	sort.StringSlice(studyGroup).Sort()
-	fmt.Println("sort.Reverse(sort.StringSlice(studyGroup)):", sort.Reverse(sort.StringSlice(studyGroup)))
+	fmt.Printf("sort.Reverse(sort.StringSlice(studyGroup)): %T \n", sort.Reverse(sort.StringSlice(studyGroup)))
 	p := sort.Reverse(sort.StringSlice(studyGroup))
 	fmt.Println("&p:", &p)
 	sort.Sort(p)
