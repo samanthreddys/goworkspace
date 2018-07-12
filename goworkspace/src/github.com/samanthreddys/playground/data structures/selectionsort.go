@@ -5,6 +5,7 @@ import "fmt"
 var lst = []int{4, 9, 2, 7, 1, 3, 6, 8}
 var size = len(lst)
 
+// selection sort compares the left most element with smallest element in put in the first item
 func selectionSort(lst []int) []int {
 	for i := 0; i < size; i++ {
 		var smallest = i
