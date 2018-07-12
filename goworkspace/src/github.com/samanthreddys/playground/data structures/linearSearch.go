@@ -3,14 +3,10 @@ package main
 import "fmt"
 
 func linearSearch(lst []int, number int) int {
-
 	for i := 0; i < len(lst); i++ {
-
 		if lst[i] == number {
-
 			return i
 		}
-
 	}
 	return -1
 }
