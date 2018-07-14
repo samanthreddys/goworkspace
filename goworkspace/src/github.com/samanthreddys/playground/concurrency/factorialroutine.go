@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	f := factorial(50)
+	f := factorial(5)
 	for n := range f {
 		fmt.Println("N Value: ", n)
 	}
