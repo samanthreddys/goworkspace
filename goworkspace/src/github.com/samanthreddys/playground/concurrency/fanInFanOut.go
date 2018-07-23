@@ -17,6 +17,7 @@ func main() {
 func gen(n ...int) chan int {
 
 	fmt.Printf("Type of Numbers %T\n", n)
+
 	out := make(chan int)
 	go func() {
 		for _, i := range n {
