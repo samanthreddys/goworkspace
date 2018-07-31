@@ -1,5 +1,6 @@
 package main
 
+// using template.Must
 import (
 	"html/template"
 	"log"
@@ -16,7 +17,7 @@ func init() {
 
 func main() {
 	err := tpl.ExecuteTemplate(os.Stdout, "template1.go", nil)
-	err = tpl.Execute(os.Stdout, nil)
+	err = tpl.Execute(os.Stdout, "Sam")
 	if err != nil {
 		log.Fatalln(err)
 	}
