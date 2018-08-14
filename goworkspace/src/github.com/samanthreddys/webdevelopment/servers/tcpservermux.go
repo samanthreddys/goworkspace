@@ -50,7 +50,7 @@ func request(conn net.Conn) {
 
 func mux(conn net.Conn, ln string) {
 	//defer conn.Close()
-
+	fmt.Println("Conn:", conn)
 	m := strings.Fields(ln)[0]
 	u := strings.Fields(ln)[1]
 
