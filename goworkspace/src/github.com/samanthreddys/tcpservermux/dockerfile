@@ -1,0 +1,16 @@
+From golang:latest
+
+ADD . /go/src/github.com/samanthreddys/goworkspace/tree/master/goworkspace/src/github.com/samanthreddys/tcpservermux
+
+# Build the contact_registry command inside the container.
+
+RUN go install github.com/samanthreddys/goworkspace/tree/master/goworkspace/src/github.com/samanthreddys/tcpservermux
+
+# Run the contact_registry command when the container starts.
+
+ENTRYPOINT /go/bin/tcpservermux
+
+# http server listens on port 8080.
+
+EXPOSE 8080
+
