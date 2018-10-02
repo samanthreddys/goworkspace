@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"reflect"
 	"testing"
 )
@@ -29,6 +30,11 @@ func Test_newDeckLength(t *testing.T) {
 	if len(d) != 52 {
 		t.Errorf("Expected Length is 52 but got %v", len(d))
 	}
+
+	if d[0] != "Ace of Spades" {
+		t.Errorf("Expected Ace of Spades but got %v", d[0])
+
+	}
 }
 
 func Test_deck_print(t *testing.T) {
@@ -37,6 +43,7 @@ func Test_deck_print(t *testing.T) {
 		d    deck
 	}{
 		// TODO: Add test cases.
+		{"Sc2", deck{"Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades", "Five of Spades", "Six of Spades", "Seven of Spades", "Eight of Spades", "Nine of Spades", "Ten of Spades", "Jack of Spades", "Queen of Spades", "King of Spades", "Ace of Hearts", "Two of Hearts", "Three of Hearts", "Four of Hearts", "Five of Hearts", "Six of Hearts", "Seven of Hearts", "Eight of Hearts", "Nine of Hearts", "Ten of Hearts", "Jack of Hearts", "Queen of Hearts", "King of Hearts", "Ace of Diamonds", "Two of Diamonds", "Three of Diamonds", "Four of Diamonds", "Five of Diamonds", "Six of Diamonds", "Seven of Diamonds", "Eight of Diamonds", "Nine of Diamonds", "Ten of Diamonds", "Jack of Diamonds", "Queen of Diamonds", "King of Diamonds", "Ace of Clubs", "Two of Clubs", "Three of Clubs", "Four of Clubs", "Five of Clubs", "Six of Clubs", "Seven of Clubs", "Eight of Clubs", "Nine of Clubs", "Ten of Clubs", "Jack of Clubs", "Queen of Clubs", "King of Clubs"}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -46,7 +53,15 @@ func Test_deck_print(t *testing.T) {
 }
 
 func Test_deck_saveToFile(t *testing.T) {
-	type args struct {
+
+	os.Remove("_decktesting")
+	deck := newDeck()
+	deck.saveToFile("_decktesting")
+	loadedDeck := newDeckromFile("_decktesting")
+	if len(loadedDeck) != 52 {
+		t.Errorf("Expected 52 cards in deck but got %v", len(loadedDeck))
+	}
+	/* type args struct {
 		fileName string
 	}
 	tests := []struct {
@@ -56,6 +71,7 @@ func Test_deck_saveToFile(t *testing.T) {
 		wantErr bool
 	}{
 		// TODO: Add test cases.
+		{"decktest", deck{"Hello"}, "", ""},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -63,7 +79,7 @@ func Test_deck_saveToFile(t *testing.T) {
 				t.Errorf("deck.saveToFile() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
-	}
+	} */
 }
 
 func Test_deck_shuffle(t *testing.T) {
