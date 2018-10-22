@@ -1,4 +1,4 @@
-From golang:latest
+FROM golang:latest
 
 ADD . /go/src/github.com/samanthreddys/goworkspace/tree/master/goworkspace/src/github.com/samanthreddys/tcpservermux
 

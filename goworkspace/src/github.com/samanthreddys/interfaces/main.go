@@ -26,5 +26,6 @@ func (sb spanishBot) getGreeting() string {
 
 }
 func printGreeting(b bot) {
+	fmt.Printf("%T", b)
 	fmt.Println(b.getGreeting())
 }
