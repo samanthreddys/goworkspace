@@ -1,0 +1,29 @@
+<<<<<<< HEAD
+#Folders
+_obj
+_test
+playarea
+
+
+#extensions
+
+*.exe
+
+mac hidden folders files
+.DS_Store
+=======
+# ignore binaries
+myweb.com
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+>>>>>>> 09db17ae2d23744b5f30263d0b59c2e03062aeb9

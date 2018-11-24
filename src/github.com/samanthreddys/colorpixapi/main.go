@@ -59,10 +59,8 @@ func GetPix() ([]ColorPix, error) {
 		if err := rows.Scan(&pictype, &picowner, &createdAt); err != nil {
 			return nil, err
 		}
-		fmt.Println("Before appending")
 		results = append(results, ColorPix{pictype, picowner, createdAt,})
 	}
-	fmt.Println("results:",results)
 	return results, nil
 
 }
@@ -104,7 +102,6 @@ func main() {
 
 	dbInfo := fmt.Sprintf("host=%s port=%d user=%s dbname=%s sslmode=disable password=%s", host, port, user, dbname, password)
 	db, err = sql.Open("postgres", dbInfo)
-	fmt.Println("db value:",&db)
 	if err != nil {
 		panic(err)
 	}
