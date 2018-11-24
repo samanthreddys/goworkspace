@@ -1,0 +1,41 @@
+version: '3'
+services:
+  db:
+      container_name: colorpixdb
+      image: postgres
+      hostname: db
+      environment:
+        GET_HOST_FROM: dns
+        POSTGRES_DB: clrpix_dev
+        POSTGRES_USER: postgres-dev
+        POSTGRES_PASSWORD: mysecretpassword
+      ports:
+        - 5432:5432
+      networks:
+        - colorpixnet
+  colorpixapi:
+    container_name: colorpixapi
+    image: samanthreddys/colorpixapi:v1
+    hostname: colorpixapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      GET_HOST_FROM: dns
+    networks:
+      - colorpixnet
+    volumes:
+      - ./go/src/colorpixapi
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    links:
+      - db
+    labels:
+      kompose.service.type: LoadBalancer
+networks:
+    colorpixnet:
+      driver: bridge
+
+
